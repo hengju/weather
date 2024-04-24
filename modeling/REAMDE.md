@@ -17,3 +17,10 @@
     - 평가지표 : mean absolute error(MAE), root mean squared error(RMSE)
 - 모델 학습 결과
     - 각 Dimension (지역∩타겟) 에 해당하는 Best 모델 선정 및 시각화
+ 
+[파일 설명]
+1. df_accum.gzip: 20170101 ~ 20220701 기간 날씨 데이터
+2. awsId_awsNames.json: 관측소ID-관측소명 매핑 json 파일
+3. model-result-test.csv: 모델 성능 결과 (MAE)
+4. graph.zip: 관측소별, 타겟별, 모델별 (60개) 에 대한 시계열 그래프 
+   
