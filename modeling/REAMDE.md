@@ -20,6 +20,29 @@
  
 [파일 설명]
 1. df_accum.gzip: 20170101 ~ 20220701 기간 날씨 데이터
+   (방법1) 검색창에 아래 google drive 링크 타고 들어가서 직접 파일 다운 
+   - https://drive.google.com/file/d/14Vxtncy1A5wIwS6_GomRLApg14oKH-gv/view?usp=sharing
+
+   (방법2) google colab에 개별 구글드라이브 연동 후, google_drive_downloader 라이브러리 통해 파일 다운
+```
+    from google.colab import drive
+    import os
+    
+    drive.mount('/content/drive')
+    
+    os.chdir('{해당 경로 지정}')
+    
+    !ls
+
+
+  # https://drive.google.com/file/d/14Vxtncy1A5wIwS6_GomRLApg14oKH-gv/view?usp=sharing
+    from google_drive_downloader import GoogleDriveDownloader as gdd
+    
+    gdd.download_file_from_google_drive(file_id='14Vxtncy1A5wIwS6_GomRLApg14oKH-gv',
+                                        dest_path='./df_accum.gzip',
+                                        unzip=False)
+```
+
 2. awsId_awsNames.json: 관측소ID-관측소명 매핑 json 파일
 3. model-result-test.csv: 모델 성능 결과 (MAE)
 4. graph.zip: 관측소별, 타겟별, 모델별 (60개) 에 대한 시계열 그래프 
